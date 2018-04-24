@@ -1,0 +1,25 @@
+syntax = "proto2";
+package protocal;
+option java_package = "com.rolan.proto";
+option java_outer_classname = "PersonEntity";
+message People {
+    repeated Person person = 1;
+    message Person {
+        required int32 id = 1;
+        required int64 index = 2;
+        optional string guid=3;
+        required string name = 4;
+        optional string gender=5;
+        optional string company=6;
+        optional string email = 7;
+        repeated Friend friend = 8;
+
+        message Friend {
+            required string id = 1;
+            required string name = 4;
+        }
+
+    }
+
+}
+
